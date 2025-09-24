@@ -25,9 +25,11 @@ public class OrderProcessor {
 
             try {
                 double totalOrder = 0;
+                // PRECISAMOS MEXER AQUI!!
                 for (Item item : order.items()) {
                     totalOrder += item.price() * item.quantity();
                 }
+                // PRECISAMOS MEXER AQUI!!
 
                 totalRevenue += totalOrder;
 

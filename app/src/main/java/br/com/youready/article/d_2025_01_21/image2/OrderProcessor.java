@@ -38,6 +38,7 @@ public class OrderProcessor {
         System.out.println("Order processing complete. Total revenue: " + totalRevenue);
     }
 
+    // Código extraído!
     private static double getTotalOrder(Order order) {
         double totalOrder = 0;
         for (Item item : order.items()) {
