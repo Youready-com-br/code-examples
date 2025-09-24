@@ -1,14 +1,14 @@
-package br.com.youready.article.d_2025_01_21;
+package br.com.youready.article.d_2025_01_21.image5;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrderProcessor {
-    public void processOrders(List<Order> orders) {
+    public void processOrders(List<Order> orders, List<String> discountItens) {
         double totalRevenue = 0;
         List<Order> failedOrders = new ArrayList<>();
 
-        System.out.println("Validating orders... ");
+        System.out.println("Validating orders...");
         for (Order order : orders) {
             if (order == null || order.items() == null || order.items().isEmpty()) {
                 assert order != null;
@@ -17,18 +17,14 @@ public class OrderProcessor {
             }
         }
 
-        System.out.println("Processing valid orders... ");
+        System.out.println("Processing valid orders.");
         for (Order order : orders) {
             if (failedOrders.contains(order)) {
                 continue;
             }
 
             try {
-                double totalOrder = 0;
-                for (Item item : order.items()) {
-                    totalOrder += item.price() * item.quantity();
-                }
-
+                double totalOrder = order.getTotal(discountItens);
                 totalRevenue += totalOrder;
 
                 System.out.println("Processed order: " + order.id() + " with total of " + totalOrder);
