@@ -1,7 +1,8 @@
 package br.com.youready.article.d_2024_12_02.image7
 
 class Ponto {
-    double x, y
+    double x
+    double y
 }
 
 class Linha {
