@@ -21,17 +21,20 @@ repositories {
 }
 
 dependencies {
-    // Use the latest Groovy version for building this library
     implementation libs.groovy.all
 
-    // This dependency is used by the application.
     implementation libs.guava
+    implementation 'com.tngtech.archunit:archunit-junit4:0.14.1'
+    implementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
+    implementation libs.spock.core
+    implementation 'org.assertj:assertj-core:3.23.1'
 
-    // Use the awesome Spock testing and specification framework even with Java
-    testImplementation libs.spock.core
-    testImplementation libs.junit
+    implementation 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+    implementation libs.junit
 
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.junit.platform:junit-platform-launcher'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
