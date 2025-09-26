@@ -21,4 +21,44 @@ class GildedRose {
             strategy.update(item);
         }
     }
+
+    public static class Item {
+        public String name;
+        public int sellIn;
+        public int quality;
+    }
+
+    public interface UpdateStrategy {
+        void update(Item item);
+    }
+
+    static class AgedBrieStrategy implements UpdateStrategy {
+        public void update(Item item) {
+            if (item.quality < 50) {
+                item.quality++;
+                item.sellIn--;
+                if (item.sellIn < 0 && item.quality < 50) {
+                    item.quality++;
+                }
+            }
+        }
+    }
+
+    static class BackstagePassStrategy implements UpdateStrategy {
+        public void update(Item item) {
+            // Similar à versão 1
+        }
+    }
+
+    static class DefaultStrategy implements UpdateStrategy {
+        public void update(Item item) {
+            // Similar à versão 1
+        }
+    }
+
+    static class SulfurasStrategy implements UpdateStrategy {
+        public void update(Item item) {
+            // Nada acontece
+        }
+    }
 }
