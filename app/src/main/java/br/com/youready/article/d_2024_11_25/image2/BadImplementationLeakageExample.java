@@ -1,7 +1,5 @@
 package br.com.youready.article.d_2024_11_25.image2;
 
-
-
 public class BadImplementationLeakageExample {
 
     private Patient patient;

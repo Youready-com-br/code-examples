@@ -1,9 +1,8 @@
 package br.com.youready.article.d_2024_11_25.image2;
 
 import br.com.youready.article.d_2024_11_18.image2.ManchesterProtocolClassification;
-import lombok.Getter;
-
 import java.time.Instant;
+import lombok.Getter;
 
 @Getter
 public class Patient {
