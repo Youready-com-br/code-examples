@@ -6,9 +6,15 @@ groovy-all = "4.0.28"
 guava = "33.4.6-jre"
 junit = "4.13.2"
 spock-core = "2.3-groovy-4.0"
+spring-kafka = "3.2.0"
+spring-boot-starter-amqp = "3.2.0"
+assertj-core = "3.25.3"
 
 [libraries]
 groovy-all = { module = "org.apache.groovy:groovy-all", version.ref = "groovy-all" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
 junit = { module = "junit:junit", version.ref = "junit" }
 spock-core = { module = "org.spockframework:spock-core", version.ref = "spock-core" }
+spring-kafka = { module = "org.springframework.kafka:spring-kafka", version.ref = "spring-kafka" }
+spring-boot-starter-amqp = { module = "org.springframework.boot:spring-boot-starter-amqp", version.ref = "spring-boot-starter-amqp" }
+assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj-core" }
