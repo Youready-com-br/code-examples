@@ -37,6 +37,7 @@ dependencies {
     implementation libs.junit
 
     implementation 'io.vavr:vavr:0.10.4'
+    implementation 'joda-time:joda-time:2.12.7'
 
     implementation 'org.junit.platform:junit-platform-launcher'
 }
