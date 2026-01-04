@@ -13,6 +13,9 @@ plugins {
     id 'application'
 
     id 'com.diffplug.spotless' version '7.0.3'
+
+    id 'org.springframework.boot' version '3.5.8'
+    id 'io.spring.dependency-management' version '1.1.7'
 }
 
 repositories {
@@ -30,6 +33,9 @@ dependencies {
     implementation libs.assertj.core
     implementation libs.spring.kafka
     implementation libs.spring.boot.starter.amqp
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
 
     implementation 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
@@ -40,6 +46,9 @@ dependencies {
     implementation 'joda-time:joda-time:2.12.7'
 
     implementation 'org.junit.platform:junit-platform-launcher'
+
+    // Random test data generator for JUnit
+    implementation 'org.instancio:instancio-junit:5.5.1'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

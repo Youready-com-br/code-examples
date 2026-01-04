@@ -17,4 +17,3 @@ public class ComparingJodaVsJava {
         Date oldDate = new Date(); // Tem todos os componentes
     }
 }
-

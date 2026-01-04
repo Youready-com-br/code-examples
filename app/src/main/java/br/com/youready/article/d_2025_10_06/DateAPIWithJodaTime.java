@@ -5,8 +5,7 @@ import org.joda.time.Interval;
 class DateAPIWithJodaTime implements DateACL {
     @Override
     public String now() {
-        return org.joda.time.LocalDateTime.now()
-                                          .toString();
+        return org.joda.time.LocalDateTime.now().toString();
     }
 
     @Override
@@ -18,13 +17,11 @@ class DateAPIWithJodaTime implements DateACL {
 
     @Override
     public String plusWeeks(String date, int weeks) {
-        return new org.joda.time.LocalDateTime(date).plusWeeks(weeks)
-                                                    .toString("yyyy-MM-dd'T'HH:mm");
+        return new org.joda.time.LocalDateTime(date).plusWeeks(weeks).toString("yyyy-MM-dd'T'HH:mm");
     }
 
     @Override
     public String plusHours(String date, int hours) {
-        return new org.joda.time.LocalDateTime(date).plusHours(hours)
-                                                    .toString("yyyy-MM-dd'T'HH:mm");
+        return new org.joda.time.LocalDateTime(date).plusHours(hours).toString("yyyy-MM-dd'T'HH:mm");
     }
 }
