@@ -21,7 +21,7 @@ public class BadSampleExampleTest {
     @Test
     void failingTest() {
         int umPositivo = 1;
-        int outroPositivo = 1 + Integer.MAX_VALUE;
+        int outroPositivo = Integer.MAX_VALUE;
 
         assertThat(umPositivo + Integer.MAX_VALUE).isPositive();
         assertThat(outroPositivo).isPositive();
