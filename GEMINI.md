@@ -28,3 +28,36 @@ When encountering incomplete or non-compiling code samples, the general process 
     *   Fixing one error might reveal others. Repeat the process until the code compiles without errors.
 
 This generic approach allows for a systematic way to tackle various compilation issues in incomplete code.
+
+## Generating Code Images with carbon-now-cli
+
+This project utilizes `carbon-now-cli` to generate high-quality images of code snippets directly from the terminal.
+
+### Usage
+
+Since `carbon-now-cli` is not installed globally, use `npx` to execute it:
+
+```bash
+npx carbon-now-cli <file>
+```
+
+### Common Commands
+
+*   **Generate image from file:**
+    ```bash
+    npx carbon-now-cli path/to/file.java
+    ```
+*   **Interactive mode (customize settings):**
+    ```bash
+    npx carbon-now-cli path/to/file.java --interactive
+    ```
+*   **Select specific lines:**
+    ```bash
+    npx carbon-now-cli path/to/file.java --start 5 --end 15
+    ```
+*   **From clipboard:**
+    ```bash
+    npx carbon-now-cli --from-clipboard
+    ```
+
+For detailed documentation, refer to the [official repository](https://github.com/mixn/carbon-now-cli).
