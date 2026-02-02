@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotEmpty;
 
 import java.util.List;
 
-public record OrderRequestFast(
+public record OrderRequestFastImpl(
         @NotEmpty @Email String customerEmail,
         @NotEmpty @Valid List<OrderItemRequest> items,
         boolean isVip) {

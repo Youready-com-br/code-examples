@@ -11,4 +11,10 @@ public record OrderRequestWellThought(
         @NotEmpty @Email String customerEmail,
         @NotEmpty @Valid List<OrderItemRequest> items,
         Boolean isVip) {
+
+    // Mantendo API antiga
+    public OrderRequestWellThought(@NotEmpty @Email String customerEmail,
+                                   @NotEmpty @Valid List<OrderItemRequest> items) {
+        this(customerEmail, items, false);
+    }
 }

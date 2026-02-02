@@ -14,16 +14,16 @@ import java.util.UUID;
 @Service
 @AllArgsConstructor
 @Transactional
-public class OrderServiceFast {
+public class OrderServiceFastImpl {
 
     private static final Logger log =
-            LoggerFactory.getLogger(OrderServiceFast.class);
+            LoggerFactory.getLogger(OrderServiceFastImpl.class);
 
     private final ProductRepository productRepository;
     private final OrderRepository orderRepository;
     private final InventoryEventPublisher eventPublisher;
 
-    public OrderResponse placeOrder(OrderRequestFast request) {
+    public OrderResponse placeOrder(OrderRequestFastImpl request) {
         Order order = new Order();
         order.setOrderNumber(UUID.randomUUID()
                                  .toString());
