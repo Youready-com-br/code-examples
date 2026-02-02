@@ -12,3 +12,4 @@ plugins {
 
 rootProject.name = 'code-examples'
 include('app')
+include('testing-config')

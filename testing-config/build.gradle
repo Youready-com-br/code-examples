@@ -1,0 +1,69 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.8'
+    id 'io.spring.dependency-management' version '1.1.7'
+//    id 'com.adarshr.test-logger' version '4.0.0'
+}
+
+//testlogger {
+//    theme 'mocha'
+//}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+// https://docs.gradle.org/current/userguide/jvm_test_suite_plugin.html
+// Exemplo simples! Ver a doc para mais detalhes!
+testing {
+    suites {
+        test {
+            dependencies {
+                implementation 'org.springframework.boot:spring-boot-starter-test'
+            }
+        }
+
+        integrationTest(JvmTestSuite) {
+            dependencies {
+                implementation 'org.springframework.boot:spring-boot-starter-test'
+                implementation 'org.testcontainers:junit-jupiter'
+                implementation 'org.testcontainers:postgresql'
+            }
+
+            targets {
+                configureEach {
+                    testTask.configure {
+                        shouldRunAfter(test)
+                    }
+                }
+            }
+        }
+
+        contractTest(JvmTestSuite) {
+            // Configuração
+        }
+
+        outroTipoDeTest(JvmTestSuite) {
+            // Configuração
+        }
+    }
+}
+
+// Hook integration tests into the standard check lifecycle
+tasks.named('check') {
+    // Makes running 'check' also run integration tests
+    dependsOn(testing.suites.integrationTest)
+}
